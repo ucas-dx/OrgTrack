@@ -87,6 +87,9 @@ def time_lapse(test_data, name, show_label=True, model_name="att_swin"):
     #测试数据
     model=nn.Sequential()
     if  model_name=="MACP":
+        """
+        网络预测接口
+        """
         model = MACPNet.MACP.MVCnet()
         model = model.to(device)
         model.load_state_dict(torch.load(r'MACPNet\MACP.pth', map_location='cpu'))
